@@ -1,0 +1,24 @@
+---
+title: "Final Project Proposal"
+author: "Lina Marcinczyk"
+date: "2026-11-06"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The group members (names and UNIs)
+
+The tentative project title
+
+The motivation for this project
+
+The intended final products
+
+The anticipated data sources
+
+The planned analyses / visualizations / coding challenges
+
+The planned timeline
