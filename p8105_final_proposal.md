@@ -1,0 +1,49 @@
+Final Project Proposal
+================
+Lina Marcinczyk
+2026-11-06
+
+## Group Members
+
+Lina Marcinczyk (lm3717) Yiman Rui (yr2560) Haoyun Tong (hct2116) Felix
+Song (fs2968) Lauren Holley (lah2227)
+
+## The tentative project title
+
+Is Mamdani’s New York a Happier, Healthier New York?
+
+## The motivation for this project
+
+We are interested in seeing how Mamdani’s policies have translated into
+action and how they have impacted the people of New York!!
+
+## The intended final products
+
+We want to show both positive and negative associations between
+Mamdani’s time as Mayor and social and health outcomes for the city’s
+residents.
+
+## The anticipated data sources
+
+311 complaints, various datasets related to housing in New York, MTA
+subway and bus ridership data, Citibike data, data on mental health
+outcomes and other determinants of overall popoulation happinness (TBD).
+
+## The planned analyses / visualizations / coding challenges
+
+We will be comparing all of these data from before Mamdani came into
+office with after. For visualization we can look at different boroughs,
+neighborhood complaints, age distrubutions, and political affiliations.
+We foresee potential challenges with finding corresponding data that is
+recent enough and paired. It might also be hard to find and interpret
+any mental health or happinness data. Of course there is no way to
+control for confounding variables so no real conclusions will be made.
+
+## The planned timeline
+
+Week 1, we will first obtain and process all of the data sets. Week 2,
+we will do exploratory analysis and visualization of individual
+variables Week 3, we will look at associations and compile everything
+together, start writing the report Week 4, we will work on all final
+touches, adding linear regression if suitable and anything else we see
+fit

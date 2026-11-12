@@ -1,5 +1,5 @@
 ---
-title: "Final Project Proposal"
+title: "P8105 Final Project Proposal"
 author: "Lina Marcinczyk"
 date: "2026-11-06"
 output: github_document
@@ -36,7 +36,7 @@ data on mental health outcomes and other determinants of overall popoulation hap
 
 ## The planned analyses / visualizations / coding challenges
 
-We will be comparing all of these data from before Mamdani came into office with after. For visualization we can look at different boroughs, neighborhood complaints, age distrubutions, and political affiliations. We foresee potential challenges with finding corresponding data that is recent enough and paired. It might also be hard to find and interpret any mental health or happinness data. Of course there is no way to control for confounding variables so no real conclusions will be made. 
+We will be comparing all of these data from before Mamdani came into office with after. For visualization we can look at different boroughs, neighborhood complaints, age distrubutions, and political affiliations. We foresee potential challenges with finding corresponding data that is recent enough and paired. It might also be hard to find and interpret any mental health or happinness data. Since it is difficult to control for confounding variables, our conclusions will have the necessary assumptions and limitations. 
 
 ## The planned timeline
 
