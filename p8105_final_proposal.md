@@ -1,4 +1,4 @@
-Final Project Proposal
+P8105 Final Project Proposal
 ================
 Lina Marcinczyk
 2026-11-06
@@ -36,8 +36,9 @@ office with after. For visualization we can look at different boroughs,
 neighborhood complaints, age distrubutions, and political affiliations.
 We foresee potential challenges with finding corresponding data that is
 recent enough and paired. It might also be hard to find and interpret
-any mental health or happinness data. Of course there is no way to
-control for confounding variables so no real conclusions will be made.
+any mental health or happinness data. Since it is difficult to control
+for confounding variables, our conclusions will have the necessary
+assumptions and limitations.
 
 ## The planned timeline
 
