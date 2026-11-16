@@ -1,0 +1,55 @@
+---
+title: "housing_violations"
+output: github_document
+date: "2026-11-15"
+---
+
+Importing the Necessary Libraries
+
+```{r}
+library(tidyverse)
+#Data from Jan 1st-Nov 15th 2026
+housing_data_2025 = 
+  read_csv(
+    "data/Housing_Maintenance_code_Violations_2026.csv",
+    na = c("NA", ".", ""),
+    show_col_types = FALSE
+  ) |> 
+  janitor::clean_names() 
+
+#Data from Jan 1st-Nov 15th 2025
+housing_data_2026 = 
+  read_csv(
+    "data/Housing_Maintenance_Code_Violations_2025.csv",
+    na = c("NA", ".", ""),
+    show_col_types = FALSE
+  ) |> 
+  janitor::clean_names() 
+
+```
+
+
+Now that we've imported our data, we are going to need a few helper functions to process it.
+
+```{r}
+#For the date, not to add too many unnecessary columns, we create a helper function to get the day, month, and year from date notation
+get_date = function(date){
+  full_date = myd(date)
+  date_df = tibble(
+    day = day(full_date),
+    month = month(full_date),
+    year = year(full_date)
+  )
+  return(date_df)
+}
+
+```
+
+
+
+
+
+
+
+
+
