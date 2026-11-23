@@ -1,0 +1,36 @@
+---
+title: "MTA Ridership"
+output: github_document
+date: "2026-11-23"
+---
+
+```{r message=FALSE}
+library(tidyverse)
+```
+
+Loading in data:
+* Cleaning names
+* Cutting it down to only bus and subway modes of transportation
+* Filtering to January through October 2025 and 2026
+
+```{r}
+ridership_df = 
+  read_csv("data/MTA_Daily_Ridership_and_Traffic.csv") |>
+  janitor::clean_names() |>
+  mutate(
+    date  = mdy(date),
+    count = parse_number(as.character(count))
+  ) |>
+  filter(
+    mode %in% c("Bus", "Subway"),
+    year(date) %in% c(2025, 2026),
+    month(date) <= 10
+  )
+```
+
+
+
+
+
+
+
