@@ -14,3 +14,4 @@ Housing Violations: https://data.cityofnewyork.us/Housing-Development/Housing-Ma
 
 I think this one is better since 311 is mostly noise complaints but whatever works - Department of Building Complaints: https://data.cityofnewyork.us/Housing-Development/date-entered-view/s49s-pfkk/about_data
 
+Daily MTA Ridership: https://data.ny.gov/Transportation/MTA-Daily-Ridership-and-Traffic-Beginning-2020/sayj-mze2/about_data
