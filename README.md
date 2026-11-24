@@ -12,6 +12,8 @@ Housing Violations: https://data.cityofnewyork.us/Housing-Development/Housing-Ma
 
 311 Complaints: https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data
 
-I think this one is better since 311 is mostly noise complaints but whatever works - Department of Building Complaints: https://data.cityofnewyork.us/Housing-Development/date-entered-view/s49s-pfkk/about_data
-
 Daily MTA Ridership: https://data.ny.gov/Transportation/MTA-Daily-Ridership-and-Traffic-Beginning-2020/sayj-mze2/about_data
+
+Unemployment data: https://dol.ny.gov/local-area-unemployment-statistics?utm_source=chatgpt.com 
+
+Park Accessibility: https://data.cityofnewyork.us/dataset/Walk-to-a-Park-Service-Area-for-CEQR-Open-Space-As/k66c-pzws/data_preview
