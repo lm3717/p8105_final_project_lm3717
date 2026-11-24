@@ -1,0 +1,141 @@
+---
+title: "311"
+output: github_document
+date: "2026-11-19"
+---
+
+Importing the Necessary Libraries
+
+```{r}
+library(tidyverse)
+
+url_311 = paste0(
+  "https://data.cityofnewyork.us/resource/erm2-nwe9.csv",
+  "?$where=created_date%20between%20",
+  "'2025-01-01T00:00:00'%20and%20",
+  "'2026-12-31T23:59:59'",
+  "&$limit=1000"
+)
+
+complaints_df = read_csv(url_311)
+
+glimpse(complaints_df)
+
+```
+
+We will just use some relevant categories related to quality of life
+
+```{r}
+quality_of_life_df = complaints_df |>
+  filter(
+    complaint_type %in% c(
+      "Noise - Residential",
+      "Noise - Street/Sidewalk",
+      "Noise - Vehicle",
+      "Noise",
+      "Lead",
+      "Indoor Air Quality",
+      "Air Quality",
+      "Water Maintenance",
+      "Dirty Condition",
+      "Rodent",
+      "Illegal Dumping",
+      "Street Condition",
+      "Sidewalk Condition"
+    )
+  )
+
+nrow(quality_of_life_df)
+```
+
+Now to get monthly summaries
+
+```{r}
+library(httr2)
+
+get_311_data = function(start_date = "2025-01-01",
+                        end_date = "2026-11-25") {
+
+  complaint_types = c(
+    "Noise - Residential",
+    "Noise - Street/Sidewalk",
+    "Noise - Vehicle",
+    "Noise",
+    "Lead",
+    "Indoor Air Quality",
+    "Air Quality",
+    "Water Maintenance",
+    "Dirty Condition",
+    "Rodent",
+    "Illegal Dumping",
+    "Street Condition",
+    "Sidewalk Condition"
+  )
+
+  types_sql = paste0(
+    "'", complaint_types, "'",
+    collapse = ", "
+  )
+
+  request("https://data.cityofnewyork.us/resource/erm2-nwe9.json") |>
+    req_url_query(
+      `$select` = paste(
+        "date_trunc_ym(created_date) AS month,",
+        "borough, complaint_type, count(*) AS n"
+      ),
+      `$where` = paste0(
+        "created_date >= '", start_date, "'",
+        " AND created_date < '", end_date, "'",
+        " AND complaint_type IN (", types_sql, ")"
+      ),
+      `$group` = "month, borough, complaint_type",
+      `$order` = "month, borough, complaint_type",
+      `$limit` = 50000
+    ) |>
+    req_perform() |>
+    resp_body_json(simplifyVector = TRUE) |>
+    as_tibble() |>
+    mutate(
+      month = as.Date(month),
+      n = as.integer(n)
+    )
+}
+```
+
+```{r}
+quality_of_life_summary = get_311_data() 
+
+quality_of_life_clean = quality_of_life_summary |>
+  filter(borough != "Unspecified")
+
+glimpse(quality_of_life_clean)
+```
+
+This data contains 6(?) boroughs, 13 complaint types, and 1946533 total complaints.
+560 unspecified boroughs were removed.
+
+# A tibble: 6 × 2
+  borough       total_complaints
+  <chr>                    <int>
+1 BROOKLYN                533146
+2 BRONX                   507389
+3 QUEENS                  435433
+4 MANHATTAN               400036
+5 STATEN ISLAND            69969
+6 Unspecified                560
+
+
+Saving this CSV to github
+
+```{r}
+dir.create("data", showWarnings = FALSE)
+
+write_csv(
+  quality_of_life_clean,
+  "data/nyc_311_quality_of_life_2025_2026.csv"
+)
+```
+
+
+
+
